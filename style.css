@@ -1,0 +1,258 @@
+
+body{
+    background-color: rgb(50, 18, 18);
+    
+}
+
+.parent{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr;
+    gap: 20px;
+
+}
+
+.item:nth-child(1){
+    font-size: 1.5rem;
+    grid-row: span 2;
+    display: grid;
+    align-content: center;
+
+}
+
+.item{
+    background-color: rgb(60, 19, 21);
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: aliceblue;
+}
+
+.item img{
+    width: 500px;
+    max-width: 1100px;
+    grid-template-columns: no-repeat(auto-fit, minmax(180px, 1fr));
+
+}
+
+.container{
+    max-width: 900px;
+    height: 300px;
+    background-color:rgb(60, 19, 21);
+    margin: 0 auto 20px auto;
+    display: grid;
+  
+}
+
+.container img{
+    height: 240px;
+    width: 900px;
+}
+
+.text-center{
+    color: aliceblue;
+    font-size: 4rem;
+    margin: auto;
+}
+
+.full-width-demo{
+    display: grid;
+    grid-template-columns:minmax(auto, 900px);
+    justify-content: center;
+    background-color: rgb(60, 19, 21);
+    color:aliceblue;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+
+.picture-display{
+    display: grid;
+    max-width: 700px;
+    margin: 20px auto;
+
+}
+
+.picture-display img{
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+    display: block;
+}
+
+.overlay-text{
+    align-self: start;
+    grid-column: 1;
+    grid-row:1;
+    color: aliceblue;
+    background-color: rgba(253,253,23, 0.3);
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+
+}
+
+.overlay-text p{
+    margin: 0;
+}
+
+
+
+@media screen and(min-width:850px){
+
+     .layout{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "header header"
+        "sidebar main"
+        "sidebar footer";
+        
+    }
+
+}
+
+.header{
+    background-color: rgb(60, 19, 21);
+    color: aliceblue;
+    padding: 20px;
+    grid-area: header; 
+    text-align: center;
+    font-size: 24px;
+}
+
+.sidebar{
+    grid-area:sidebar;
+    background-color:rgb(60, 19, 21) ;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color:aliceblue;
+    padding: 20px;
+}
+
+.main{
+    grid-area: main;
+    padding: 20px;
+    line-height: 1.5;
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+.footer{
+    grid-area: footer;
+    align-self: end;
+    background-color:rgb(60, 19, 21);
+    color: aliceblue;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.responsive-demo{
+    max-width: 1100px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.responsive-item{
+    background-color: rgb(36, 4, 4);
+    padding: 10px;
+    color: silver;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+.responsive-item img{
+    height: 100px;
+}
+
+.responsive-item img{
+    height: 100px;
+    width: 200px;
+}
+
+h3{
+    color: yellowgreen;
+}
+
+.click a{
+    font-size: 48px;
+    font-weight: bold;
+    margin-top:50px ;
+    padding: 20px;
+    background-color:rgb(60, 19, 21);
+    color: blue;
+    
+}
+
+.art-banner{
+    background-color: cadetblue;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    grid-template-rows: 20px 1fr 1fr 1fr 20px;
+
+}
+
+.art-banner-background{
+    opacity: 0.3;
+    background: url(./images/Everest1.jpg)
+    center center no-repeat;
+    background-size: cover;
+    grid-column: 1/ -1;
+    grid-row: 1 / -1;
+}
+
+.banner-text{
+    color: aliceblue;
+    font-size: 9vw;
+    font-weight: bold;
+    grid-column: 2 / span 2;
+    grid-row: 3; 
+    align-self: center;
+    justify-self: center;
+}
+
+.badge{
+    background-color: rgb(233, 81, 93);
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    color: aliceblue;
+    font-size: 2.6vw;
+    font-weight: bold;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transform: rotate(30deg);
+    opacity: .3;
+
+}
+
+.badge p{
+    margin: auto;
+}
+
+.art-banner::before{
+    content: "";
+    opacity: 0.85;
+    border-top: 5px solid salmon;
+    border-right: 5px solid salmon;
+    grid-column: 4;
+    grid-row: 2 / span 3;
+
+}
+
+.art-banner::after{
+    content: "";
+    opacity: 0.85;
+    border-bottom: 5px solid salmon;
+    border-left: 5px solid salmon;
+    grid-column:2;
+    grid-row: 2/ span 3;
+}
